@@ -1,6 +1,6 @@
 # If the order of the operations did not matter I considered doing a check to see if R was even then do not do anything of only do S if it was greater than one. Because it was not specified I decided to do each operation as it was given.
 import re
-string = '(AB) C((DE)F) /S'
+string = '(AB)C((DE)F) /SS'
 
 def exp_proccess(string):
     if string == '':
@@ -31,22 +31,27 @@ def exp_proccess(string):
             i = 0
             counter = 0
             index = []
+            first_paren = []
             while i < length:
                 if string[i] == '(':
                     counter += 1
                     if counter > 1:
                         index.append(i)
+                    elif counter == 1 and len(first_paren) < 2:
+                        first_paren.append(i)
                 if string[i] == ')' and counter > 1:
                     index.append(i)
                     counter -= 1
                 elif string[i] == ')' and counter == 1:
                     counter  -= 1
+                    if len(first_paren) < 2:
+                        first_paren.append(i)
                 i += 1
             i = 0
-            for j in index:
+            total_parenthesis = first_paren + index
+            for j in total_parenthesis:
                 string = string[:j-i] + string[j+1-i:]
                 i += 1
-            for i in length
             flag = 1
 
     return(string)
