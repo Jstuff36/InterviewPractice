@@ -5,7 +5,7 @@ string = '343(((5)67)8) /RS'
 def exp_process(string):
     if string == '':
         return('Input is empty') #If string is empty inform the user
-    regex = r'/([RSrs]+)?'
+    regex = r'/([RS]+)?'
     #Using regex capture the text that conatins the commands the program will do
     matches = re.search(regex, string, re.IGNORECASE)
     string = string.replace(matches.group(0), '').strip()
