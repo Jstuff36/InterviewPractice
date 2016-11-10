@@ -1,6 +1,6 @@
 from fractions import Fraction
 
-pegs = [4, 30, 50]
+pegs = [4, 30, 50, 100, 140]
 def answer(pegs):
     radius_coef = [[0 for i in range(len(pegs))] for j in range(len(pegs))]
     radius_coef[0][0] = 1
@@ -8,7 +8,6 @@ def answer(pegs):
     for i in range(0, len(pegs)-1):
         radius_coef[i+1][i] = 1
         radius_coef[i+1][i+1] = 1
-
     pegs_coef = [[0]]
     for i in range(len(pegs)-1):
         pegs_coef.append([pegs[i+1] - pegs[i]])
@@ -16,6 +15,7 @@ def answer(pegs):
     for i in range(len(pegs_coef)):
         Guass_Matrix.append(radius_coef[i] + pegs_coef[i])
     solution = Guass_Elimination(Guass_Matrix)
+    return(pegs_coef)
     if all(x > 0 for x in solution):
         return([round(solution[0]), 1])
         #return(Fraction(solution[0]).numerator, Fraction(solution[0]).denominator)
