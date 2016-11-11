@@ -30,9 +30,9 @@ def normalize_data(per_info, matches):
     per_info = per_info.replace(matches.group(0), '')
     per_info = char_replace(per_info)
     if '+' in per_info:
-        if len(per_info) <= 8:
+        if len(per_info) <= 7:
             per_info = '+' + add_stars(per_info[1:4]) + '-' + per_info[4:]
-        elif len(per_info) == 11:
+        elif len(per_info) == 10:
             per_info = '+' + add_stars(per_info[-10:-7]) +'-'+ add_stars(per_info[-7:-4]) +'-'+ per_info[-4:]
         else:
             per_info = '+' + add_stars(per_info[1:-10]) +'-'+ add_stars(per_info[-10:-7]) +'-'+ add_stars(per_info[-7:-4]) +'-'+ per_info[-4:]
