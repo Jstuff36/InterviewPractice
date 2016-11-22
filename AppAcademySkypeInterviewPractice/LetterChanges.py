@@ -41,3 +41,6 @@ def dic(char):
 		return(char)
 
 print(LetterChanges(test_string))
+
+#Other way
+#print(chr(ord('B')+1))
