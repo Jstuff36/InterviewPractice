@@ -9,4 +9,3 @@ def disemvowel(test_string):
 	return(''.join(ans))
 
 print(disemvowel(test_string))
-
