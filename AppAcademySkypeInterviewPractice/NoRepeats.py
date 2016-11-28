@@ -1,4 +1,4 @@
-years = [1123, 1123]
+years = [1980, 1987]
 
 def NoRepeats(years):
 	ans = []
@@ -15,3 +15,10 @@ def Repeat(year):
 	return(True)
 
 print(NoRepeats(years))
+
+#Better way found online using set
+
+def NoRepeatsSet(years):
+	return([i for i in range(years[0], years[1]+1) if len(set(str(i))) == 4])
+
+print(NoRepeatsSet(years))
