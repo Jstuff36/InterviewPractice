@@ -1,0 +1,1 @@
+puts ("fish" => "aquatic animal").is_a?(String)

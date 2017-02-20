@@ -1,4 +1,4 @@
-test_list = [5,6,2,3]
+test_list = [5,4,1,2,3]
 
 def bubble_sort(test_list):
 	for i in range(len(test_list)):
@@ -7,6 +7,7 @@ def bubble_sort(test_list):
 				temp = test_list[i]
 				test_list[i] = test_list[j]
 				test_list[j] = temp
+		print(test_list)
 	return(test_list)
 
 print(bubble_sort(test_list))

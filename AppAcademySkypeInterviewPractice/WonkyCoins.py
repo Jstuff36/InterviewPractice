@@ -1,4 +1,4 @@
-num = 1
+num = 3
 
 def WonkyCoins(num):
 	num = int(num)

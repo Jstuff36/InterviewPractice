@@ -1,7 +1,7 @@
 def answer(plaintext):
     string = ''
     for letter in plaintext:
-        string = string + text2braillelib(letter)
+        string += text2braillelib(letter)
     return(string)
 
 def text2braillelib(let):

@@ -1,4 +1,4 @@
-num = 3223
+num = 33223
 
 def DasherizeNumber(num):
 	num = str(num)
