@@ -1,17 +1,17 @@
 def third_greatest(arr)
-	first = 0
-	second = 0
-	third = 0
+	first = nil
+	second = nil
+	third = nil
 	arr.each do |i|
-		if i >= first
+		if first.nil? || i >= first
 			temp = first
 			third = second
 			second = temp
 			first = i
-		elsif i >= second
+		elsif second.nil? || i >= second
 			third = second
 			second = i
-		elsif i >= third
+		elsif third.nil? || i >= third
 			third = i
 		end
 	end
