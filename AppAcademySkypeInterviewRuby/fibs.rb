@@ -5,7 +5,7 @@ def fibs(num)
 	arr
 end
 
-p fibs(2)
+p fibs(100)
 
 def fibs_rec(num, arr = [0, 1])
 	return 1 if num < 2
@@ -15,4 +15,4 @@ def fibs_rec(num, arr = [0, 1])
 
 end
 
-p fibs_rec(2)
+p fibs_rec(100)
