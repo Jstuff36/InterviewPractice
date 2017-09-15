@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div>
+            Example
+        </div>
+        <div>
+            X
+        </div>
+    </div>
+    <ul class="drop-downs">
+        <li class="drop-down-titles num0">
+            header1
+        </li>
+        <li class="drop-down-content">
+            content1
+        </li>
+        </li>
+        <li class="drop-down-titles num1">
+            header2
+        </li>
+        <li class="drop-down-content">
+            content2
+        </li>
+        <li class="drop-down-titles num2"> 
+            header3
+        </li>
+        <li class="drop-down-content">
+            content3
+        </li>
+        <li class="drop-down-titles num3">
+            header4
+        </li>
+        <li class="drop-down-content">
+            content4
+        </li>
+    </ul>
+    <script>
+
+        function transitionDropDown(title, idx) {
+            return () => {
+                let whichDropDown = dropDownContent[idx]
+                title.classList.contains('rotate-arrow') ? title.classList.remove("rotate-arrow") : title.classList.add("rotate-arrow")
+                whichDropDown.classList.contains("appearing-block") ? whichDropDown.classList.remove("appearing-block") : whichDropDown.classList.add("appearing-block");
+            }
+        }
+        
+        dropDownTitles = document.querySelectorAll(".drop-down-titles");
+        dropDownContent = document.querySelectorAll(".drop-down-content");
+        dropDownTitles.forEach( (title, idx) => title.addEventListener('click', transitionDropDown(title, idx)));
+    </script>
+</body>
+</html>
